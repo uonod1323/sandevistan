@@ -1,0 +1,10 @@
+body {
+    position: relative;
+}
+
+#draggableImage {
+    position: absolute;
+    width: 200px; /* Change according to your needs */
+    height: auto;
+    cursor: pointer;
+}

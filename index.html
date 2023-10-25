@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>너도 산데비스탄이냐?</title>
+    <link rel="stylesheet" href="css\styles.css">
+</head>
+
+<body>
+    <!-- Image Upload Input -->
+    <input type="file" id="imageInput" accept="image/*" onchange="loadUserImage(this)">
+
+    <!-- Original Image Element. Initially hidden until a user uploads an image -->
+    <img id="draggableImage" src="#" alt="Uploaded Image" style="display: none;">
+
+    <script>
+        function loadUserImage(input) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const draggableImage = document.getElementById('draggableImage');
+                    draggableImage.src = e.target.result;
+                    draggableImage.style.display = 'block'; // Show the image element
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+    <script src="js\script.js"></script>
+</body>
+
+</html>
